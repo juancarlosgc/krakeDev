@@ -16,7 +16,7 @@ calcularSubTotal = function(precio, cantidad){
     return subTotal;
 }
 
-calcularTotal1 = function(sub, des, iva){
+calcularValorTotal = function(sub, des, iva){
     let total;
     total= (sub-des)+iva;
     return total;
