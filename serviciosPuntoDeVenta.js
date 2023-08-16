@@ -1,13 +1,12 @@
 calcularValorDescuento = function(monto, porcentaje){
-    let descuento, total;
+    let descuento;
     descuento= (monto*porcentaje)/100;
-    total=monto-descuento;
-    return total;
+    return descuento;
 }
 
-calcularIva = function(precioSinIva){
+calcularIva = function(subTotal, descuento){
     let precioFinal;
-    precioFinal=precioSinIva*0.12;
+    precioFinal=(subTotal-descuento)*0.12;
     return precioFinal;
 }
 
@@ -17,12 +16,13 @@ calcularSubTotal = function(precio, cantidad){
     return subTotal;
 }
 
-calcularTotal = function(subTotal, descuento, iva){
+calcularTotal1 = function(sub, des, iva){
     let total;
-    cmpIva= document.getElementById(iva).value;
-    total= parseFloat(cmpSubTotal)+parseFloat(cmpIva)+parseFloat(iva);
+    total= (sub-des)+iva;
     return total;
 }
+
+
 
 
 

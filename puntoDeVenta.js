@@ -14,23 +14,22 @@ calcularTotal = function(){
     
     //1. Recuperar el nombre del producto como String
     nombreProducto = recuperarTexto("txtProducto");
-    console.log(nombreProducto);
-
+    
     //2. Recuperar el precio como float
     precioProducto = recuperarFloat ("txtPrecio");
-    console.log(precioProducto);
+   
     
     //3. Recuperar cantidad como int
     cantidad = recuperarInt("txtCantidad");
-    console.log(cantidad);
-
+   
+    
     //4. Recuperar el porcentaje de descuento como int
     porcentajeDescuento = recuperarInt("txtPorcentajeDescuento");
-    console.log(porcentajeDescuento);
+   
 
     //4. Invocar a calcularSubtotal y el retorno guardar en la variable valorSubtotal
     valorSubtotal = calcularSubTotal(cantidad,precioProducto);
-    console.log(valorSubtotal);
+   
 
     //5. Mostrar valorSubtotal en el componente lblSubtotal
         /*
@@ -44,20 +43,21 @@ calcularTotal = function(){
     
     //6. Invocar a calcularDescuento y lo que devuelve guardar en la variable valorDescuento
     valorDescuento = calcularValorDescuento(valorSubtotal, porcentajeDescuento);
-    console.log(valorDescuento);
+    
 
     //7. Mostrar el resultado en el componente lblDescuento
         /*
             Caso de prueba: 
                 precioProducto: 5.4  cantidad: 10 descuento: 10
-                Descuento esperado: 48.6
+                Descuento esperado: 5.4
             Si el caso de prueba es exitoso, hacer un commit
          */
 
     mostrarTexto("lblDescuento", valorDescuento);
 
     //8. Invocar a calcularIVA y lo que devuelve guardar en la variable valorIVA
-    valorIVA=calcularIva(valorDescuento);
+    valorIVA=calcularIva(valorSubtotal,valorDescuento);
+
 
     //9. Mostrar el resultado en el componente lblValorIVA    
     /*
@@ -70,19 +70,30 @@ calcularTotal = function(){
     mostrarTexto("lblValorIVA", valorIVA);
 
     //10. Invocar a calcularTotal y lo que devuelve guardar en la variable valorTotal
+    valorTotal=calcularTotal1(valorSubtotal,valorDescuento,valorIVA);
+    
     //11. Mostrar el resultado en el componente lblTotal
      /*
             Caso de prueba: 
                 precioProducto: 5.4  cantidad: 10 descuento: 10
-                Total esperado: 5.832
+					--valorSubtotal: 5.4
+					--descuento: 5.4
+					--IVA: 5.832
+                Total esperado: 54.432
             Si el caso de prueba es exitoso, hacer un commit
         */
+      mostrarTexto("lblTotal", valorTotal);
+
+
     //12. Mostrar un resumen en el componente lblResumen
         /*
             Ejemplo: 
                 Valor a pagar por 20 cerveza corona con 10% de descuento: USD 48.75
             Si funciona, hacer un commit
         */ 
+       
+     mostrarTexto("lblTotal", "Valor a pagar por " + nombreProducto + "con  " + valorDescuento + "% es " +  valorTotal );  
+    
     
 }   
 limpiar=function(){
