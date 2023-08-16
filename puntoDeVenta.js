@@ -43,6 +43,9 @@ calcularTotal = function(){
     mostrarTexto("lblSubtotal", valorSubtotal);
     
     //6. Invocar a calcularDescuento y lo que devuelve guardar en la variable valorDescuento
+    valorDescuento = calcularValorDescuento(valorSubtotal, porcentajeDescuento);
+    console.log(valorDescuento);
+
     //7. Mostrar el resultado en el componente lblDescuento
         /*
             Caso de prueba: 
@@ -50,7 +53,12 @@ calcularTotal = function(){
                 Descuento esperado: 48.6
             Si el caso de prueba es exitoso, hacer un commit
          */
+
+    mostrarTexto("lblDescuento", valorDescuento);
+
     //8. Invocar a calcularIVA y lo que devuelve guardar en la variable valorIVA
+    valorIVA=calcularIva(valorDescuento);
+
     //9. Mostrar el resultado en el componente lblValorIVA    
     /*
             Caso de prueba: 
@@ -58,6 +66,9 @@ calcularTotal = function(){
                 IVA esperado: 5.832
             Si el caso de prueba es exitoso, hacer un commit
         */
+
+    mostrarTexto("lblValorIVA", valorIVA);
+
     //10. Invocar a calcularTotal y lo que devuelve guardar en la variable valorTotal
     //11. Mostrar el resultado en el componente lblTotal
      /*
