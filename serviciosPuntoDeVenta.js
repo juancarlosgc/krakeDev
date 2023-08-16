@@ -4,9 +4,9 @@ calcularValorDescuento = function(monto, porcentaje){
     return descuento;
 }
 
-calcularIva = function(subTotal, descuento){
+calcularIva = function(subTotal){
     let precioFinal;
-    precioFinal=(subTotal-descuento)*0.12;
+    precioFinal=(subTotal)*0.12;
     return precioFinal;
 }
 
@@ -21,6 +21,8 @@ calcularValorTotal = function(sub, des, iva){
     total= (sub-des)+iva;
     return total;
 }
+
+
 
 
 

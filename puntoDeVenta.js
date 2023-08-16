@@ -56,7 +56,7 @@ calcularTotal = function(){
     mostrarTexto("lblDescuento", valorDescuento);
 
     //8. Invocar a calcularIVA y lo que devuelve guardar en la variable valorIVA
-    valorIVA=calcularIva(valorSubtotal,valorDescuento);
+    valorIVA=calcularIva(valorSubtotal-valorDescuento);
 
 
     //9. Mostrar el resultado en el componente lblValorIVA    
