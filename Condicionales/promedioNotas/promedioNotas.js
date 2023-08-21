@@ -31,4 +31,5 @@ calcularPromedioNotas=function(){
         cmpMensaje=document.getElementById("lblMensaje");
         cmpMensaje.innerText=("DATOS INCORRECTOS");
     }
+
 }
