@@ -20,6 +20,9 @@ calcularTotal = function(){
     
     
     esProductoValido=function(dato, idComponenteError){
+        let valida;
+        valida = dato.charCodeAt(0);
+
         if(dato.length == 0 ){
             mostrarTexto(idComponenteError, "CAMPO OBLIGATORIO");
             existeError = true;
@@ -28,6 +31,13 @@ calcularTotal = function(){
         if (dato.length > 10){
             mostrarTexto(idComponenteError,"DEBE CONTENER MENOS DE 10 CARACTERES");
             existeError = true;
+        }
+
+       for(i=0; i<dato.length; i++){
+        if (dato.charCodeAt(i) < 65 || dato.charCodeAt(i) > 122  ){
+            mostrarTexto(idComponenteError,"DEBE INGRESAR SOLO CARACTERES");
+            existeError = true;
+            }
         }
 
         if (existeError==false){
@@ -94,7 +104,11 @@ limpiar=function(){
         mostrarTexto("lblDescuento", "0.0");
         mostrarTexto("lblValorIVA", "0.0");
         mostrarTexto("lblTotal", "0.0");
-        mostrarTexto("lblResumen", " ");
+
+       /* mostrarTexto("lblError1", "");
+        mostrarTexto("lblError2", "");
+        mostrarTexto("lblError3", "");*/
+       
 
         mostrarTextoEnCaja("txtProducto", " " );
         mostrarTextoEnCaja("txtCantidad", "0");

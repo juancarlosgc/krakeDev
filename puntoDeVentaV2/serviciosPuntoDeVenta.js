@@ -1,19 +1,18 @@
 calcularValorDescuento = function(monto, porcentaje){
     let descuento;
-    descuento= (monto*porcentaje)/100;
+    descuento= parseFloat((monto*porcentaje)/100);
     return descuento;
 }
 
 calcularIva = function(subTotal){
-    let precioFinal,aux;
-    precioFinal=subTotal*0.12;
+    let precioFinal;
+    precioFinal=parseFloat(subTotal*0.12);
     return precioFinal;
 }
 
 calcularSubTotal = function(precio, cantidad){
-    let subTotal,aux;
-    aux = parseFloat(precio*cantidad);
-    subTotal=aux.toFixed(2);
+    let subTotal;
+    subTotal = precio*cantidad;
     return subTotal;
 }
 
