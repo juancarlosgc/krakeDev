@@ -24,23 +24,23 @@ calcularValorTotal = function(sub, des, iva){
 
 
 calcularDescuentoPorVolumen=function(precio,cantidad){
-    let descuento, valorPagar, valorSinDescuento;
+    let descuento,aux;
 
     if (cantidad >= 3 && cantidad <= 5){
-        descuento = (precio*3)/100;
-        valorPagar=descuento.toFixed(2);
-        return valorPagar;
+        aux = (precio*3)/100;
+        descuento=aux.toFixed(2);
+        return descuento;
     }else if (cantidad >= 6 && cantidad <= 11){
-        descuento = (precio*4)/100;
-        valorPagar=descuento.toFixed(2);
-        return valorPagar;
+        aux = (precio*4)/100;
+        descuento=aux.toFixed(2);
+        return descuento;
     }else if (cantidad >= 12){
-        descuento = (precio*5)/100;
-        valorPagar=descuento.toFixed(2);
-        return valorPagar;
+        aux = (precio*5)/100;
+        descuento=aux.toFixed(2);
+        return descuento;
     }else{
-        valorPagar=precio.toFixed(2);
-        return valorPagar;
+        aux=precio.toFixed(2);
+        return descuento;
     }
 }
 

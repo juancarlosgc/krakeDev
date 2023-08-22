@@ -53,7 +53,7 @@ calcularTotal = function(){
             existeError = true;
         }
 
-        if (dato < 1 || dato > 100){
+        if (dato < 0 || dato > 100){
             mostrarTexto(idComponenteError,"INGRESE UN NUMERO ENTRE 1 Y 100");
             existeError = true;
         }
