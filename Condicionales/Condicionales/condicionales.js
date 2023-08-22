@@ -49,7 +49,7 @@ calcularDescuento=function(precio,cantidad){
     }else{
         aux=valorSinDescuento;
         valorPagar=aux.toFixed(2);
-        return (valorSinDescuento);
+        return valorPagar;
     }
 }
 
@@ -67,7 +67,7 @@ determinarColesterolLDL = function(colesterol){
     }else if(colesterol>= 160 && colesterol <= 189){
         nivelColesterol="Alto";
         return nivelColesterol;
-    }else if(colesterol>= 1090){
+    }else if(colesterol>= 190){
         nivelColesterol="Muy alto";
         return nivelColesterol;
     }
