@@ -39,8 +39,7 @@ calcularDescuentoPorVolumen=function(precio,cantidad){
         descuento=aux.toFixed(2);
         return descuento;
     }else{
-        aux=precio.toFixed(2);
-        return descuento;
+        return 0;
     }
 }
 
