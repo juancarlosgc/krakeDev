@@ -1,3 +1,11 @@
+/*
+debes tranformar los resulatdos que seria algo asi dependiendo si es float, in o String= (toString)
+function calcularCapacidadPago(edad, ingresos, egresos) {
+    let capacidadPago;
+    capacidadPago=parseInt(edad);
+  }
+*/
+
 calcularTasaInteres = function(ingresoAnual){
     
     let tasaInteres;
@@ -14,7 +22,6 @@ calcularTasaInteres = function(ingresoAnual){
     }
     return tasaInteres;
 }
-
 
 calcularCapacidadPago= function(edad, ingresos, egresos){
     let capacidadPago, aux;
