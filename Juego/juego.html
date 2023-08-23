@@ -1,24 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   <script src="juego.js"></script>
-   <script src="serviciosJuego.js"></script>
-   <script src="utilitarios.js"></script>
+    <link rel="stylesheet" href="juego.css">
+    <script src="juego.js"></script>
+    <script src="serviciosJuego.js"></script>
+    <script src="utilitarios.js"></script>
 </head>
+
 <body>
-    <img src="imagenes/piedra.png" alt="" onclick="jugar('piedra');">
-    <img src="imagenes/papel.png" alt="" onclick="jugar('papel');">
-    <img src="imagenes/tijera.png" alt="" onclick="jugar('tijera');">
-    <img src="" alt="" id="imgJuego">
-    <h1 id="lblResultado"></h1>
-    <h3>Puntos Usuario</h3>
-    <h4 id="lblPuntosUsuario"></h4>
-    <h3>Puntos Computador</h3>
-    <h4 id="lblPuntosComputador"></h4>
+    <div id="container"></div>
+    <header>
+        <h2>JUEGO PIEDRA PAPEL O TIJERA</h2>
+    </header>
+    <div class="usuario">
+        <h2>SELECCIONA UNA IMAGEN</h2>
+        <img src="imagenes/piedra.png" alt="" width="200px" height="200px" onclick="jugar('piedra');">
+        <img src="imagenes/papel.png" alt="" width="200px" height="200px" onclick="jugar('papel');">
+        <img src="imagenes/tijera.png" alt="" width="200px" height="200px" onclick="jugar('tijera');">
+    </div>
 
-    <h3 id="lblMensajeGanador"></h3>
+    <div class="computador">
+        <h2>SELECCION DEL COMPUTADOR</h2>
+        <img src="" alt="" id="imgJuego" width="200px" height="200px">
+    </div>
+    <div class="resultados">
+        <h3 id="lblResultado"></h3>
+    </div>
+    <div class="puntaje">
+        <h3>Puntos Usuario</h3>
+        <h4 id="lblPuntosUsuario">0</h4>
 
-    
+        <h3>Puntos Computador</h3>
+        <h4 id="lblPuntosComputador">0</h4>
+
+        <div class="mensajefinal">
+            <h4 id="lblMensajeGanador"></h4>
+        </div>
+    </div>
+    <div class="boton">
+        <input type="button" value="NUEVA PARTIDA" onclick="limpiar();">
+    </div>
+    </div>
+
 
 </body>
+
 </html>

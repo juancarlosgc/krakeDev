@@ -27,3 +27,12 @@ jugar=function(seleccionado){
     }
     
 }
+
+limpiar=function(){
+    mostrarTexto("lblResultado","");
+    mostrarTexto("lblPuntosUsuario","0");
+    mostrarTexto("lblPuntosComputador","0");
+    mostrarTexto("lblMensajeGanador","");
+    puntosComputador=0;
+    puntosUsuario=0;
+}

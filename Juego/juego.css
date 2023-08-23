@@ -1,0 +1,76 @@
+*{
+    background: rgb(196, 203, 211);
+}
+body{
+    background-color:  rgb(196, 203, 211);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#container{
+    margin: 0px auto;
+    width: 1100px;
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+}
+
+header{
+    background: lightsteelblue;
+    text-align: center;
+    color: cornsilk;
+    border-bottom: 10px ;
+    border-top: 10px ;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.usuario{
+    background: rgb(196, 203, 211);
+    text-align: center;
+    color: darkgray;
+    flex-direction: row;
+    text-align: center;
+}
+
+.computador{
+    background: rgb(196, 203, 211);
+    text-align: center;
+    color: darkgray;
+    flex-direction: row;
+    text-align: center;
+}
+
+h3{
+    color: rgb(14, 112, 192);
+}
+
+h4{
+    color: rgb(14, 112, 192);
+    font-size: 20px;
+}
+
+.resultados{
+    background: rgb(196, 203, 211);
+    text-align: center;
+    color: rgb(33, 30, 207);
+    flex-direction: row;
+    text-align: center;
+}
+
+.puntaje{
+    background: rgb(196, 203, 211);
+    text-align: center;
+    color: darkgray;
+    flex-direction: row;
+    text-align: center;
+}
+.mensajefinal{
+    font-size: 50px;
+    color: brown;
+}
+
+.boton{
+    flex-direction: row;
+    text-align: center;
+}
