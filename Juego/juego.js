@@ -19,5 +19,11 @@ jugar=function(seleccionado){
     }else if(resultado == 0){
         mostrarTexto("lblResultado", "EMPATE");
     }
+
+    if (puntosUsuario == 5){
+        mostrarTexto("lblMensajeGanador", "HAS GANADO EL JUEGO");
+    }else if(puntosComputador == 5){
+        mostrarTexto("lblMensajeGanador", "EL COMPUTADOR TE HA VENCIDO");
+    }
     
 }
