@@ -3,11 +3,14 @@ validarEstructura=function(numeroplaca, idComponenteError){
     let longitud;
     let mensajeConcatenado;
     let existeError=false;
+    let encontrado = false;
+
     placa=numeroplaca;
     longitud=placa.length;
 
     let caracter1,caracter2,caracter3,caracter4,caracter5,caracter6,caracter7,caracter8;
     let mensaje1,mensaje2, mensaje3,mensaje4,mensaje5,mensaje6,mensaje7,mensaje8,mensaje9;
+    let mensajeVehiculo;
     caracter1=esMayuscula(placa.charAt(0));
     caracter2=esMayuscula(placa.charAt(1));
     caracter3=esMayuscula(placa.charAt(2));
@@ -88,6 +91,46 @@ validarEstructura=function(numeroplaca, idComponenteError){
         }
 
 }
+
+obtenerTipoVehiculo=function(placa, idComponenteError){
+    let caracter;
+    caracter=placa.charAt(1);
+    if (caracter == "A" || caracter == "Z"){
+        mensajeVehiculo="Vehiculo comercial";
+        encontrado= true;
+        return mensajeVehiculo;
+    }else if (caracter == "E" ){
+        mensajeVehiculo="Vehiculo gubernamental";
+        encontrado= true;
+        return mensajeVehiculo;
+    }else if (caracter == "X" ){
+        mensajeVehiculo="Vehiculo de uso oficial";
+        encontrado= true;
+        return mensajeVehiculo;
+    }else if (caracter == "S" ){
+        mensajeVehiculo="Vehiculo de gobierno provincial";
+        encontrado= true;
+        return mensajeVehiculo;
+    }else if (caracter == "M" ){
+        mensajeVehiculo="Vehiculo de gobierno municipal";
+        encontrado= true;
+        return mensajeVehiculo;
+    }else if (caracter == "M" ){
+        mensajeVehiculo="Vehiculo de gobierno municipal";
+        encontrado= true;
+        return mensajeVehiculo;
+    }else{
+        mensajeVehiculo="Vehiculo particular";
+        encontrado= true;
+        return mensajeVehiculo;
+    }
+
+    if (encontrado == false){
+        return null;
+    }
+
+}
+
 
 
 
