@@ -1,5 +1,4 @@
 obtenerAleatorio=function(){
-    //var aleatorio = Math.floor(Math.random() * (this._maximo - this._minimo + 1)) + this;
     let aleatorio,aux,aleatorioEntero,valor;
     aleatorio = Math.random();
     aux = aleatorio*3;
@@ -28,8 +27,7 @@ generarElemento= function(){
 }
 
 determinarGanador=function(eleccionJugador1,eleccionJugador2){
-    let resultado;
-    let op1,op2,ganador;
+    let op1,op2;
     op1=eleccionJugador1;
     op2=eleccionJugador2;
     if (op1 == "papel" && op2 == "piedra"){
