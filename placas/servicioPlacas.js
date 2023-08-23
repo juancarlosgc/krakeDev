@@ -233,5 +233,6 @@ obtenerProvincia=function(placa, idComponenteError){
         return null;
     }
     
+    
 }
  
