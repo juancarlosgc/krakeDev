@@ -22,8 +22,10 @@ jugar=function(seleccionado){
 
     if (puntosUsuario == 5){
         mostrarTexto("lblMensajeGanador", "HAS GANADO EL JUEGO");
+        limpiar();
     }else if(puntosComputador == 5){
         mostrarTexto("lblMensajeGanador", "EL COMPUTADOR TE HA VENCIDO");
+        limpiar();
     }
     
 }
@@ -32,7 +34,6 @@ limpiar=function(){
     mostrarTexto("lblResultado","");
     mostrarTexto("lblPuntosUsuario","0");
     mostrarTexto("lblPuntosComputador","0");
-    mostrarTexto("lblMensajeGanador","");
     puntosComputador=0;
     puntosUsuario=0;
 }
