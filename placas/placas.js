@@ -14,6 +14,11 @@ validarPlaca=function(){
         picoPlaca=obtenerDiapicoYPlaca(placa,"lblPicoPlaca");
         mostrarTexto("lblPicoPlaca", picoPlaca);
 
+        provincia=obtenerProvincia(placa,"lblPicoPlaca");
+        if (provincia != null){
+            mostrarTexto("lblProvincia",provincia);
+        }
+        
     }else{
         mostrarTexto("lblError",erroresEstructura);
     }
@@ -23,5 +28,7 @@ limpiar=function(){
     mostrarTexto("lblError", "");
     mostrarTexto("lblPicoPlaca", "");
     mostrarTexto("lblVehiculo", "");
+    mostrarTexto("lblProvincia", "");
     mostrarTextoEnCaja("txtPlaca","")
+
 }

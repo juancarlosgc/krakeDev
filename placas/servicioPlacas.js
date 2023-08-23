@@ -13,6 +13,7 @@ validarEstructura=function(numeroplaca, idComponenteError){
     let mensaje1,mensaje2, mensaje3,mensaje4,mensaje5,mensaje6,mensaje7,mensaje8,mensaje9;
     let mensajeVehiculo;
     let mensajePicoPlaca;
+    let mensajepProvincia;
     caracter1=esMayuscula(placa.charAt(0));
     caracter2=esMayuscula(placa.charAt(1));
     caracter3=esMayuscula(placa.charAt(2));
@@ -154,5 +155,83 @@ obtenerDiapicoYPlaca=function(placa, idComponenteError){
         mensajePicoPlaca = "Día de Pico y Placa VIERNES";
         return mensajePicoPlaca;
     }
+}
+
+obtenerProvincia=function(placa, idComponenteError){
+    let caracter,letraprovincia;
+    letraprovincia=placa.charAt(0);
+    if (letraprovincia == "A"){
+        mensajeProvincia = "Azuay";
+        return mensajeProvincia;
+    }else if(letraprovincia == "B"){
+        mensajeProvincia = "Bolivar";
+        return mensajeProvincia;
+    }else if(letraprovincia == "U"){
+        mensajeProvincia = "Cañar";
+        return mensajeProvincia;
+    }else if(letraprovincia == "C"){
+        mensajeProvincia = "carchi";
+        return mensajeProvincia;
+    }else if(letraprovincia == "X"){
+        mensajeProvincia = "Cotopaxi";
+        return mensajeProvincia;
+    }else if(letraprovincia == "H"){
+        mensajeProvincia = "Chimborazo";
+        return mensajeProvincia;
+    }else if(letraprovincia == "O"){
+        mensajeProvincia = "El oro";
+        return mensajeProvincia;
+    }else if(letraprovincia == "E"){
+        mensajeProvincia = "Esmeraldas";
+        return mensajeProvincia;
+    }else if(letraprovincia == "W"){
+        mensajeProvincia = "Galapagos";
+        return mensajeProvincia;
+    }else if(letraprovincia == "G"){
+        mensajeProvincia = "Guayas";
+        return mensajeProvincia;
+    }else if(letraprovincia == "I"){
+        mensajeProvincia = "Imbabura";
+        return mensajeProvincia;
+    }else if(letraprovincia == "L"){
+        mensajeProvincia = "Loja";
+        return mensajeProvincia;
+    }else if(letraprovincia == "R"){
+        mensajeProvincia = "Los Rios";
+        return mensajeProvincia;
+    }else if(letraprovincia == "M"){
+        mensajeProvincia = "Manabí";
+        return mensajeProvincia;
+    }else if(letraprovincia == "V"){
+        mensajeProvincia = "Morona Santiago";
+        return mensajeProvincia;
+    }else if(letraprovincia == "N"){
+        mensajeProvincia = "Napo";
+        return mensajeProvincia;
+    }else if(letraprovincia == "S"){
+        mensajeProvincia = "Pastaza";
+        return mensajeProvincia;
+    }else if(letraprovincia == "P"){
+        mensajeProvincia = "Pichincha";
+        return mensajeProvincia;
+    }else if(letraprovincia == "K"){
+        mensajeProvincia = "Sucumbios";
+        return mensajeProvincia;
+    }else if(letraprovincia == "Q"){
+        mensajeProvincia = "Orellana";
+        return mensajeProvincia;
+    }else if(letraprovincia == "T"){
+        mensajeProvincia = "Tungurahua";
+        return mensajeProvincia;
+    }else if(letraprovincia == "Z"){
+        mensajeProvincia = "Zamora Chinchipe";
+        return mensajeProvincia;
+    }else if(letraprovincia == "Y"){
+        mensajeProvincia = "Santa Elena";
+        return mensajeProvincia;
+    }else{
+        return null;
+    }
+    
 }
  
