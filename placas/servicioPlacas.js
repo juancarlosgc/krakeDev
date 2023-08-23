@@ -4,6 +4,7 @@ validarEstructura=function(numeroplaca, idComponenteError){
     let mensajeConcatenado;
     let existeError=false;
     let encontrado = false;
+    let picoPlaca = false
 
     placa=numeroplaca;
     longitud=placa.length;
@@ -11,6 +12,7 @@ validarEstructura=function(numeroplaca, idComponenteError){
     let caracter1,caracter2,caracter3,caracter4,caracter5,caracter6,caracter7,caracter8;
     let mensaje1,mensaje2, mensaje3,mensaje4,mensaje5,mensaje6,mensaje7,mensaje8,mensaje9;
     let mensajeVehiculo;
+    let mensajePicoPlaca;
     caracter1=esMayuscula(placa.charAt(0));
     caracter2=esMayuscula(placa.charAt(1));
     caracter3=esMayuscula(placa.charAt(2));
@@ -131,7 +133,26 @@ obtenerTipoVehiculo=function(placa, idComponenteError){
 
 }
 
+obtenerDiapicoYPlaca=function(placa, idComponenteError){
+    let caracter,digitoVerificador;
+    digitoVerificador=placa.length-1;
+    caracter=placa.charAt(digitoVerificador);
 
-
-
+    if (caracter == 1 || caracter == 2){
+        mensajePicoPlaca = "Día de Pico y Placa LUNES";
+        return mensajePicoPlaca;
+    }else if(caracter == 3 || caracter == 4){
+        mensajePicoPlaca = "Día de Pico y Placa MARTES";
+        return mensajePicoPlaca;
+    }else if(caracter == 5 || caracter == 6){
+        mensajePicoPlaca = "Día de Pico y Placa MIERCOLES";
+        return mensajePicoPlaca;
+    }else if(caracter == 7 || caracter == 8){
+        mensajePicoPlaca = "Día de Pico y Placa JUEVES";
+        return mensajePicoPlaca;
+    }else if(caracter == 9 || caracter == 0){
+        mensajePicoPlaca = "Día de Pico y Placa VIERNES";
+        return mensajePicoPlaca;
+    }
+}
  

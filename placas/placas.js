@@ -11,8 +11,17 @@ validarPlaca=function(){
         if (tipoVehiculo != null){
             mostrarTexto("lblVehiculo", tipoVehiculo);
         }
+        picoPlaca=obtenerDiapicoYPlaca(placa,"lblPicoPlaca");
+        mostrarTexto("lblPicoPlaca", picoPlaca);
+
     }else{
         mostrarTexto("lblError",erroresEstructura);
     }
 }
 
+limpiar=function(){
+    mostrarTexto("lblError", "");
+    mostrarTexto("lblPicoPlaca", "");
+    mostrarTexto("lblVehiculo", "");
+    mostrarTextoEnCaja("txtPlaca","")
+}
