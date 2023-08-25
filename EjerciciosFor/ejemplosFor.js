@@ -39,8 +39,10 @@ hackearNasa=function(){
 }
 
 mostrarImpares=function(){
-    for(i=1;i<=21;i+=2){
+    console.log("Antes de for");
+    for(let i=1;i<=21;i+=2){
         console.log(i);
     }
+    console.log("Despues de for");
 }
 
