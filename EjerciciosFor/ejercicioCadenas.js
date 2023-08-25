@@ -27,11 +27,11 @@ recorrerCadenas= function(cadena){
 }
 
 invertirCadena=function(cadena){
-    let cadenaResultante,aux;
+    let cadenaResultante;
     cadenaResultante="";
     for (let i=cadena.length; i>=0; i--){
         cadenaResultante+=cadena.charAt(i);
     }
     //console.log(cadenaResultante);
-    mostrarTexto("lblTexto",cadenaResultante)
+    mostrarTexto("lblTexto",cadenaResultante);
 }
