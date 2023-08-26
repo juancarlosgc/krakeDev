@@ -9,8 +9,8 @@ esMayuscula=function(caracter){
             return false;
         }
 }
-
-guardarPalabra=function(palabra){
+guardarPalabra=function(){
+    palabra=recuperarTexto("txtSecreta");
     let aux="";
     let existeErrror = false;
     if (palabra.length ==  5){
@@ -25,16 +25,59 @@ guardarPalabra=function(palabra){
         if (existeErrror==false){
             palabraSecreta=aux;
             console.log(palabraSecreta);
-        }else{
-            alert("Se tiene que ingresar una palabra de 5 caracteres en mayúsculas");
         }
+    }else{
+        alert("Se tiene que ingresar una palabra de 5 caracteres en mayúsculas");
     }
 }
 
-validar=function(){
-    let palabra;
-    palabra=recuperarTexto("txtSecreta");
-    guardarPalabra(palabra);
+mostrarLetra=function(letra,posicion){
+    //let letra;
+    //letra=recuperarTexto("txtLetra");
+
+    if (posicion==0){
+        mostrarTexto("div0",letra);
+    }
+    if (posicion==1){
+        mostrarTexto("div1",letra);
+    }
+    if (posicion==2){
+        mostrarTexto("div2",letra);
+    }
+    if (posicion==3){
+        mostrarTexto("div3",letra);
+    }
+    if (posicion==4){
+        mostrarTexto("div4",letra);
+    }
 }
+
+validar=function(letra){
+    let letrasEnconstradas;
+    let caracter;
+    
+    for (let i=0;i<palabraSecreta.length;i++){
+        if (palabraSecreta.charAt(i)==letra){
+            mostrarLetra(letra,i);
+            letrasEnconstradas+=1;
+        }
+    }
+    
+    //palabra=recuperarTexto("txtSecreta");
+    //guardarPalabra(palabra);
+}
+
+ingresarLetra=function(){
+    let aux,letra;
+    aux=recuperarTexto("txtLetra");
+    letra=aux.charCodeAt(aux);
+    if (letra >= 65 && letra <= 90){
+        validar(aux);
+    }else{
+        console.log("SOLO SE ADMITEN MAYUSCULAS");
+    }
+
+}
+
 
 
