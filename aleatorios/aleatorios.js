@@ -21,7 +21,6 @@ generarAleatorios=function(){
         }
         mostrarResultados(numero);
     }
-
 }
 
 mostrarResultados=function(arregloNumeros){
