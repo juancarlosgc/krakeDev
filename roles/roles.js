@@ -131,23 +131,37 @@ guardar=function(){
     }
 
 
-    
-
-    if (error==false){
-        let aux;
-        aux=valorSueldo.toFixed(2);
-        let nuevoEmpleado= {};
-         nuevoEmpleado.cedula=valorCedula;
-         nuevoEmpleado.nombre=valorNombre;
-         nuevoEmpleado.apellido=valorApellido;
-         nuevoEmpleado.sueldo=aux;
-         let empleado= agregarEmpleado(nuevoEmpleado);
-         if (empleado == true){
-            alert("Empleado Guardado correctamente");
+    if (esNuevo==true){
+        if (error==false){
+            let aux;
+            aux=valorSueldo.toFixed(2);
+            let nuevoEmpleado= {};
+             nuevoEmpleado.cedula=valorCedula;
+             nuevoEmpleado.nombre=valorNombre;
+             nuevoEmpleado.apellido=valorApellido;
+             nuevoEmpleado.sueldo=aux;
+             let empleado= agregarEmpleado(nuevoEmpleado);
+             if (empleado == true){
+                alert("Empleado Guardado correctamente");
+                mostrarEmpleados();
+                deshabilitarCajas();
+                esNuevo=false;
+             }
+        }
+    }else if(esNuevo == false){
+        if (error==false){
+            let modificaEmpleado=buscarEmpleado(valorCedula);
+            modificaEmpleado.nombre=valorNombre;
+            modificaEmpleado.apellido=valorApellido;
+            modificaEmpleado.sueldo=valorSueldo;
             mostrarEmpleados();
             deshabilitarCajas();
-         }
+            alert("EMPLEADO MODIFICADO");
+        }
+
     }
+
+    
 }
 
 
@@ -197,6 +211,23 @@ deshabilitarCajas=function(){
     deshabilitarComponente("txtApellido");
     deshabilitarComponente("txtSueldo");
     deshabilitarComponente("btnGuardar");
+}
+
+ejecutarBusqueda=function(){
+    let valorCedula=recuperarTexto("txtBusquedaCedula");
+    let empleado=buscarEmpleado(valorCedula);
+    if (empleado != null){
+        mostrarTextoEnCaja("txtCedula",empleado.cedula);
+        mostrarTextoEnCaja("txtNombre",empleado.nombre);
+        mostrarTextoEnCaja("txtApellido",empleado.apellido);
+        mostrarTextoEnCaja("txtSueldo",empleado.sueldo);
+        habilitarComponente("txtNombre");
+        habilitarComponente("txtApellido");
+        habilitarComponente("txtSueldo");
+        habilitarComponente("btnGuardar");
+    }else{
+        alert("EMPLEADO NO EXISTE");
+    }
 }
   
 
