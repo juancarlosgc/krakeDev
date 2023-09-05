@@ -63,4 +63,138 @@ ejecutarNuevo=function(){
     esNuevo=true;
 }
 
+buscarEmpleado=function(cedula){
+    let elementoCliente;
+    let clienteEncontrado;
+    for(let i=0;i<empleados.length;i++){
+        elementoCliente=empleados[i];
+        if (elementoCliente.cedula == cedula){
+            clienteEncontrado=elementoCliente;
+            return clienteEncontrado;
+        }
+    }
+    return null;
+}
+
+agregarEmpleado=function(empleado){
+    let resultado;
+    resultado=buscarEmpleado(empleado.cedula);
+    if(resultado==null){
+        empleados.push(empleado);
+        return true;
+    }else{
+        alert("Ya existe empleado" + empleado.cedula);
+        return false;
+    }
+}
+
+guardar=function(){
+    let error=false;
+    let valorCedula=recuperarTexto("txtCedula");
+    let valorNombre=recuperarTexto("txtNombre");
+    let valorApellido=recuperarTexto("txtApellido");
+    let valorSueldo=recuperarFloat("txtSueldo");
+    let cedula=validaCedula(valorCedula);
+    let nombre=validaCaracteres(valorNombre);
+    let apellido=validaCaracteres(valorApellido);
+    let sueldo=validaSueldo(valorSueldo);
+    
+    if (valorCedula.length != 10){
+        mostrarTexto("lblErrorCedula","La cédula debe tener 10 digitos");
+        error=true;
+    }else if (cedula == false){
+        mostrarTexto("lblErrorCedula","La cédula debe tener solo digitos");
+        error=true;
+    }else{
+        mostrarTexto("lblErrorCedula","");
+    }
+    
+    if (valorNombre.length < 3){
+        mostrarTexto("lblErrorNombre","El nombre debe contener al menos 3 caracteres");
+        error=true;
+    }else if (nombre==false){
+        mostrarTexto("lblErrorNombre","El nombre debe contener solo letras mayusculas");
+        error=true;
+    }else{
+        mostrarTexto("lblErrorNombre","");
+    }
+
+    if (valorApellido.length < 3){
+        mostrarTexto("lblErrorApellido","El apellido debe contener al menos 3 caracteres");
+        error=true;
+    }else if (apellido==false){
+        mostrarTexto("lblErrorApellido","El apellido debe contener solo letras mayusculas");
+        error=true;
+    }else{
+        mostrarTexto("lblErrorApellido","");
+    }
+
+    if(sueldo == false){
+        mostrarTexto("lblErrorSueldo","Debe ingresar un numero entre 400 Y 5000");
+        error=true;
+    }
+
+
+    
+
+    if (error==false){
+        let aux;
+        aux=valorSueldo.toFixed(2);
+        let nuevoEmpleado= {};
+         nuevoEmpleado.cedula=valorCedula;
+         nuevoEmpleado.nombre=valorNombre;
+         nuevoEmpleado.apellido=valorApellido;
+         nuevoEmpleado.sueldo=aux;
+         let empleado= agregarEmpleado(nuevoEmpleado);
+         if (empleado == true){
+            alert("Empleado Guardado correctamente");
+            mostrarEmpleados();
+         }
+    }
+}
+
+
+validaCedula=function(cedula){
+    let caracter;
+    let esDigito;
+    for (let i = 0 ; i < cedula.length; i++ ){
+    caracter=cedula.charCodeAt(i);
+        if (caracter >= 48 && caracter <= 57 ){
+            esDigito = true;
+        }else{
+            esDigito = false;
+            return esDigito;
+        }
+    }
+    return esDigito;
+    
+}
+
+validaCaracteres=function(texto){
+    let caracter;
+    let esCaracter;
+    for (let i = 0 ; i < texto.length; i++ ){
+    caracter=texto.charCodeAt(i);
+        if (caracter >= 65 && caracter <= 90 ){
+            esCaracter = true;
+        }else{
+            esCaracter = false;
+            return esCaracter;
+        }
+    }
+    return esCaracter;
+}
+
+
+validaSueldo=function(valor) {
+    if (valor>=400 && valor<=5000){
+        return true;
+    }else{
+        return false;
+    }
+}
+  
+
+
+
 
