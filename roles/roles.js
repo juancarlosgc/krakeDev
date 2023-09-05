@@ -10,11 +10,7 @@ mostrarOpcionEmpleado=function(){
     ocultarComponente("divRol");
     ocultarComponente("divResumen");
     mostrarEmpleados();
-    deshabilitarComponente("txtCedula");
-    deshabilitarComponente("txtNombre");
-    deshabilitarComponente("txtApellido");
-    deshabilitarComponente("txtSueldo");
-    deshabilitarComponente("btnGuardar");
+    deshabilitarCajas();
     
 }
 
@@ -149,6 +145,7 @@ guardar=function(){
          if (empleado == true){
             alert("Empleado Guardado correctamente");
             mostrarEmpleados();
+            deshabilitarCajas();
          }
     }
 }
@@ -192,6 +189,14 @@ validaSueldo=function(valor) {
     }else{
         return false;
     }
+}
+
+deshabilitarCajas=function(){
+    deshabilitarComponente("txtCedula");
+    deshabilitarComponente("txtNombre");
+    deshabilitarComponente("txtApellido");
+    deshabilitarComponente("txtSueldo");
+    deshabilitarComponente("btnGuardar");
 }
   
 
