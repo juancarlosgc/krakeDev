@@ -239,6 +239,18 @@ limpiar=function(){
     deshabilitarCajas();
 
 }
+
+buscarRol=function(){
+    let valorCedula=recuperarTexto("txtBusquedaCedulaRol");
+    let empleado=buscarEmpleado(valorCedula);
+
+    if (empleado != null){
+        mostrarTexto("infoCedula",empleado.cedula);
+        mostrarTexto("infoSueldo",empleado.sueldo);
+        mostrarTexto("infoNombre",empleado.nombre + " " +  empleado.apellido);
+        infoNombre
+    }
+}
   
 
 

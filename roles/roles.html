@@ -7,7 +7,7 @@
     <script src="utilitarios.js"></script>
 </head>
 
-<body onload="mostrarOpcionEmpleado()">
+<body onload="mostrarOpcionRol();">
     <div class="menu">
         <div class="contenedorBoton">
 
@@ -103,12 +103,12 @@
                         CEDULA
                     </div>
                     <div>
-                        <input type="text" class="cajaTexto" id="txtBusquedaCedula" />
+                        <input type="text" class="cajaTexto" id="txtBusquedaCedulaRol" />
                         <div class="error" id="lblErrorBusqueda"></div>
                     </div>
                 </div>
                 <div class="contenedorBoton">
-                    <input type="button" value="BUSCAR" class="estiloBoton"  />
+                    <input type="button" value="BUSCAR" class="estiloBoton" onclick="buscarRol();" />
                 </div>
             </div>
 
