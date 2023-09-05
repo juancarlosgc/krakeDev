@@ -229,6 +229,16 @@ ejecutarBusqueda=function(){
         alert("EMPLEADO NO EXISTE");
     }
 }
+
+limpiar=function(){
+    esNuevo=false;
+    mostrarTextoEnCaja("txtCedula","");
+    mostrarTextoEnCaja("txtNombre","");
+    mostrarTextoEnCaja("txtApellido","");
+    mostrarTextoEnCaja("txtSueldo","");
+    deshabilitarCajas();
+
+}
   
 
 
