@@ -1,4 +1,5 @@
 let esNuevo=false;
+let roles=[];
 let empleados = [
     {cedula:"1714616123",nombre:"John",apellido:"Cena",sueldo:500.0},
     {cedula:"0914632123",nombre:"Luisa",apellido:"Gonzalez",sueldo:900.0},
@@ -18,6 +19,7 @@ mostrarOpcionRol=function(){
     ocultarComponente("divEmpleado");
     mostrarComponente("divRol");
     ocultarComponente("divResumen");
+    //deshabilitarComponente("btnGuardarRol");
 }
 
 mostrarOpcionResumen=function(){
@@ -248,7 +250,6 @@ buscarRol=function(){
         mostrarTexto("infoCedula",empleado.cedula);
         mostrarTexto("infoSueldo",empleado.sueldo);
         mostrarTexto("infoNombre",empleado.nombre + " " +  empleado.apellido);
-        infoNombre
     }
 }
 
@@ -272,15 +273,88 @@ calcularRol=function(){
 
     aux_descuento=recuperarFloat("txtDescuentos");
     descuento=aux_descuento.toFixed(2);
+
     if (descuento >= 0 && descuento <= sueldo){
         let aporte=calcularAporteEmpleado(sueldo);
         mostrarTexto("infoIESS", aporte);
         let sueldoFinal=calcularValorAPagar(sueldo,aporte,descuento);
         mostrarTexto("infoPago", sueldoFinal);
+        habilitarComponente("btnGuardarRol");
+    }else{
+        console.log("El descuento no puede ser mayor al sueldo");
     }
 
 }
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+buscarRolEmpleado=function(cedula){
+    let elementoRol;
+    let rolEncontrado;
+    for(let i=0;i<roles.length;i++){
+        elementoRol=roles[i];
+        if (elementoRol.cedula == cedula){
+            rolEncontrado=elementoRol;
+            return rolEncontrado;
+        }
+    }
+    console.log("Sin datos");
+    return null;
+    
+}
   
+
+agregarRol=function(rol){
+    let resultado;
+    resultado=buscarRolEmpleado(roles.cedula);
+    if(resultado==null){
+        roles.push(rol);
+        return true;
+    }else{
+        alert("YA EXISTE EL ROL DEL EMPLEADO" + empleado.cedula);
+        return false;
+    }
+}
+
+
+
+calcularAporteEmpleador=function(sueldo){
+    let aporteEmpleador;
+    aux=(sueldo*11.55)/100;
+    aporteEmpleador=aux.toFixed(2);
+    return aporteEmpleador;
+}
+
+guardarRol=function(){
+    let error=false;
+    let valorCedula=recuperarTextDiv("infoCedula");
+    let valorNombre=recuperarTextDiv("infoNombre");
+    let valorSueldo=recuperarFloatDiv("infoSueldo");
+    let valorPago=recuperarFloatDiv("infoPago");
+    let aporteEmpelador=calcularAporteEmpleador(valorSueldo);
+    let aporteEmpleado=calcularAporteEmpleado(valorSueldo);
+
+    let rol= {};
+             rol.cedula=valorCedula;
+             rol.nombre=valorNombre;
+             rol.sueldo=valorSueldo;
+             rol.pago=valorPago;
+             rol.aporteEmpleador=aporteEmpelador;
+             rol.aporteEmpleado=aporteEmpleado;
+             console.log(rol);
+    
+    agregarRol(rol);
+
+    
+    
+    
+    /*
+    let cedula=validaCedula(valorCedula);
+    let nombre=validaCaracteres(valorNombre);
+    let apellido=validaCaracteres(valorApellido);
+    let sueldo=validaSueldo(valorSueldo);
+    */
+}
 
 
 
